@@ -1,70 +1,50 @@
-# Code Review Developer Guide
+# Hướng Dẫn Thực Hiện Code Review Cho Developer
 
-## Introduction {#intro}
+## Giới Thiệu {#intro}
 
-A code review is a process where someone other than the author(s) of a piece of
-code examines that code.
+Code review là quá trình mà một người nào đó phân tích, xem xét một phần code do người khác viết.
 
-At Google, we use code review to maintain the quality of our code and products.
+Ở Google, chúng tôi sử dụng code review để đảm bảo chất lượng code và sản phẩm.
 
-This documentation is the canonical description of Google's code review
-processes and policies.
+Tài liệu này bao gồm các đặc tả tiêu chuẩn về quá trình và chính sách review code ở Google.
 
+Đây là trang tổng quan về quá trình review code của chúng tôi. Ngoài ra còn có hai tài liệu khác cũng bao gốm trong loạt hướng dẫn này:
 
+-   **[Cách Thực Hiện Code Review](reviewer/index.md)**: Hướng dẫn chi tiết cho người review.
+-   **[Hướng Dẫn Cho Người Tạo CL](developer/index.md)**: Hướng dẫn chi tiết cho developer có CL được review.
 
-This page is an overview of our code review process. There are two other large
-documents that are a part of this guide:
+## Người Review Code Nên Chú Ý Đến Cái Gì? {#look_for}
 
--   **[How To Do A Code Review](reviewer/index.md)**: A detailed guide for code
-    reviewers.
--   **[The CL Author's Guide](developer/index.md)**: A detailed guide for
-    developers whose CLs are going through review.
+-   **Thiết kế**: Code có được thiết kế tốt và phù hợp với hệ thống không?
+-   **Chức năng**: Code có hoạt động đúng như người viết dự tính hay không? Cách mà đoạn code hoạt động có tốt cho người dùng nó hay không?
+-   **Tính phức tạp**: Có thể làm cho đoạn code đơn giản hơn không? Liệu một developer khác có dễ dàng hiểu và sử dụng nó trong tương lai hay không?
+-   **Test**: Đoạn code có được viết automated test thiết kế tốt và đúng đắn hay khộng?
+-   **Cách đặt tên**: Developer có đặt tên với ý nghĩa rõ ràng cho biến, class, hàm.v.v.. hay chưa?
+-   **Comment**: Comment có rõ ràng và hữu dụng hay không?
+-   **Style**: Code có được định dạng theo đúng
+    [hướng dẫn về style](http://google.github.io/styleguide/) hay không?
+-   **Tài liệu/chú thích (documentation)**: Developer đã cập nhật tài liệu/chú thích liên quan đến đoạn code hay chưa?
 
-## What Do Code Reviewers Look For? {#look_for}
+Xem thêm **[Cách Thực Hiện Code Review](reviewer/index.md)** để hiểu rõ hơn.
 
-Code reviews should look at:
+### Chọn Người Review Tốt Nhất {#best_reviewers}
 
--   **Design**: Is the code well-designed and appropriate for your system?
--   **Functionality**: Does the code behave as the author likely intended? Is
-    the way the code behaves good for its users?
--   **Complexity**: Could the code be made simpler? Would another developer be
-    able to easily understand and use this code when they come across it in the
-    future?
--   **Tests**: Does the code have correct and well-designed automated tests?
--   **Naming**: Did the developer choose clear names for variables, classes,
-    methods, etc.?
--   **Comments**: Are the comments clear and useful?
--   **Style**: Does the code follow our
-    [style guides](http://google.github.io/styleguide/)?
--   **Documentation**: Did the developer also update relevant documentation?
+Nhìn chung, bạn sẽ muốn tìm người review *tốt nhất* có thể, người có khả năng tham gia/phản hồi lại review của bạn trong khoảng thời gian hợp lý.
 
-See **[How To Do A Code Review](reviewer/index.md)** for more information.
+Người review tốt nhất là người có khả năng review code kỹ càng và chính xác nhất cho đoạn code mà bạn đang viết. Thường thì đó có nghĩa là người từng viết đoạn code đó, không nhất thiết phải là người trong file OWNERS.
+Đôi khi điều đó nghĩa là bạn phải nhờ những người khác nhau review những đoạn code khác nhau trong một CL.
 
-### Picking the Best Reviewers {#best_reviewers}
+Nếu bạn tìm thấy người review lý tưởng nhưng vì lý do nào đó mà người ta đang bận thì ít nhất bạn cũng nên CC cho người đó biết về đoạn code bạn đã sửa.
 
-In general, you want to find the *best* reviewers you can who are capable of
-responding to your review within a reasonable period of time.
+### Review Trực Tiếp {#in_person}
 
-The best reviewer is the person who will be able to give you the most thorough
-and correct review for the piece of code you are writing. This usually means the
-owner(s) of the code, who may or may not be the people in the OWNERS file.
-Sometimes this means asking different people to review different parts of the
-CL.
-
-If you find an ideal reviewer but they are not available, you should at least CC
-them on your change.
-
-### In-Person Reviews {#in_person}
-
+Nếu bạn pair-programming với một người có đủ khả năng review tốt đoạn code đang viết, thì đoạn code coi như đã được review.
 If you pair-programmed a piece of code with somebody who was qualified to do a
 good code review on it, then that code is considered reviewed.
 
-You can also do in-person code reviews where the reviewer asks questions and the
-developer of the change speaks only when spoken to.
+Bạn cũng thể thực hiện việc review trực tiếp theo kiểu người review sẽ đặt các câu hỏi và người viết code trực tiếp trả lời.
 
-## See Also {#seealso}
+## Xem Thêm {#seealso}
 
--   [How To Do A Code Review](reviewer/index.md): A detailed guide for code
-    reviewers.
--   [The CL Author's Guide](developer/index.md): A detailed guide for developers
-    whose CLs are going through review.
+-   [Cách Thực Hiện Code Review](reviewer/index.md): Hướng dẫn chi tiết cho người review.
+-   [Hướng Dẫn Cho Người Tạo CL](developer/index.md): Hướng dẫn chi tiết cho developer có CL được review.
