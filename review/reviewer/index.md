@@ -1,17 +1,12 @@
-# How to do a code review
+# Cách Thực Hiện Code Review
 
-The pages in this section contain recommendations on the best way to do code
-reviews, based on long experience. All together they represent one complete
-document, broken up into many separate sections. You don't have to read them
-all, but many people have found it very helpful to themselves and their team to
-read the entire set.
+Các trang trong phần này viết về cách tốt nhất để thực hiện code review, dựa trên những kinh nghiệm đã được đúc kết lâu năm. Tất cả các trang gộp thành một tài liệu hoàn chỉnh, chia thành nhiều phần nhỏ. Bạn không cần phải đọc tất cả, nhưng nhiều người cảm thấy đọc hết các phần đã giúp rất nhiều cho team và chính họ.
 
--   [The Standard of Code Review](standard.md)
--   [What to Look For In a Code Review](looking-for.md)
--   [Navigating a CL in Review](navigate.md)
--   [Speed of Code Reviews](speed.md)
--   [How to Write Code Review Comments](comments.md)
--   [Handling Pushback in Code Reviews](pushback.md)
+-   [Quy Chuẩn Của Code Review](standard.md)
+-   [Nên Chú Ý Gì Khi Thực Hiện Code Review](looking-for.md)
+-   [Cách Duyệt Nội Dung CL Khi Review](navigate.md)
+-   [Tốc Độ Của Code Review](speed.md)
+-   [Cách Viết Comment Trong Code Review](comments.md)
+-   [Giải Quyết Khi Bị Phản Bác Trong Code Review](pushback.md)
 
-See also the [CL Author's Guide](../developer/), which gives detailed guidance
-to developers whose CLs are undergoing review.
+Xem thêm [Hướng Dẫn Cho Tác Giả CL](../developer/) để biết các hướng dẫn chi tiết cho người có CL trong quá trình review.
